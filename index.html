@@ -74,7 +74,7 @@
     <!-- ratings icon modal -->
     <div
       id="ratingInfo-modal"
-      class="relative z-10 hidden"
+      class="relative z-20 hidden"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"
@@ -141,10 +141,16 @@
         openTab:1,
       }"
         >
-        <div class="absolute w-10 h-5 right-5 top-2 flex gap-2 items-start justify-center">
-            <i class="fa-share-nodes bg-teal-200 rounded-full p-2 cursor-pointer z-50"></i>
-            <i class="fa-bookmark bg-teal-200 rounded-full p-2 cursor-pointer z-50"></i>
-        </div>
+          <div
+            class="absolute w-10 h-5 right-5 top-2 flex gap-2 items-start justify-center"
+          >
+            <i
+              class="fa-share-nodes bg-teal-200 rounded-full p-2 cursor-pointer z-10"
+            ></i>
+            <i
+              class="fa-bookmark bg-teal-200 rounded-full p-2 cursor-pointer z-10"
+            ></i>
+          </div>
           <div class="xs:flex gap-0 xs:gap-4 lg:gap-7 mb-5">
             <div class="img grow-0 gap-3 w-full xs:w-[35%] sm:w-1/4">
               <img
@@ -156,34 +162,40 @@
             <div
               class="w-full xs:w-[65%] sm:w-3/4 xs:max-h-[15rem] xs:h-[15rem] max-h-[18rem] h-[18rem] relative mr-[15px] pt-4 xs:pt-0"
             >
-            <div
-            class="information grow flex flex-col h-full"
-          >
-            <h2 class="info-h2">Dr. Brigadier R K Sharma</h2>
+              <div class="information grow flex flex-col h-full">
+                <h2 class="info-h2">Dr. Brigadier R K Sharma</h2>
 
-            <p class="info-texts fz-scale font-clamp gap-2 mt-2 xsm:mt-0">
-              <i class="fa-graduation"></i> MBBS, MD (Obs & Gyn), VSM
-            </p>
-            <p class="info-texts fz-mrv">
-              <i class="fa-badge"></i> Medical Registration Verified
-            </p>
+                <p class="info-texts fz-scale font-clamp gap-2 mt-2 xsm:mt-0">
+                  <i class="fa-graduation"></i> MBBS, MD (Obs & Gyn), VSM
+                </p>
+                <p class="info-texts fz-mrv">
+                  <i class="fa-badge"></i> Medical Registration Verified
+                </p>
 
-            <div class="flex my-3 items-center doc1">
-              <div class="rating">
-                <div class="stars"></div>
+                <div class="flex my-3 items-center doc1">
+                  <div class="rating">
+                    <div class="stars"></div>
+                  </div>
+                  <span class="number-rating ml-2">(100)</span>
+                  <i
+                    class="fa-rating-info"
+                    onclick="ratingModalToggle('show')"
+                  ></i>
+                </div>
+
+                <div class="flex flex-col sm:flex-row w-full gap-5 mt-5">
+                  <button
+                    class="bg-blue-500 text-white px-5 py-2 rounded w-32 cursor-pointer"
+                  >
+                    Call Us
+                  </button>
+                  <button
+                    class="bg-blue-500 text-white px-5 rounded w-32 cursor-pointer"
+                  >
+                    Book Now
+                  </button>
+                </div>
               </div>
-              <span class="number-rating ml-2">(100)</span>
-              <i
-                class="fa-rating-info"
-                onclick="ratingModalToggle('show')"
-              ></i>
-            </div>
-
-            <div class="flex flex-col sm:flex-row w-full gap-5 mt-5">
-              <button class="bg-blue-500 text-white px-5 py-2 rounded w-32 cursor-pointer">Call Us</button>
-              <button class="bg-blue-500 text-white px-5 rounded w-32 cursor-pointer">Book Now</button>
-            </div>
-          </div>
             </div>
           </div>
 
@@ -213,9 +225,9 @@
                     class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"
                   ></span>
                   <div class="flex items-center justify-center gap-1 md:gap-4">
-                    <i class="fa-about"></i>
+                    <i class="fa-graduation-cap"></i>
                     <span class="font-medium text-gray-900 uppercase">
-                      Experience
+                      Education
                     </span>
                   </div>
                 </button>
@@ -255,102 +267,78 @@
           <div>
             <!-- tab content 1 -->
             <div
-            class="information grow flex flex-col h-full pt-8"
-            x-show="openTab === 1"
-          >
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus tenetur sequi dolorum sunt ut magni perferendis deserunt? Eius, temporibus ducimus quos odit dignissimos corporis placeat quas, totam nisi, voluptatum accusantium. Quia velit qui ratione numquam mollitia tenetur enim repellat deserunt voluptatibus voluptate. Dolore maiores dicta eligendi. Porro voluptatem debitis nemo.</p>
-          </div>
-          <!-- tab content 2 -->
-
-          <div x-show="openTab === 2">
-            <h3 class="tabs-h3 xsm:text-md">About | Dr. R K Sharma</h3>
-            <div class="aboutTab-content relative">
-              Brigadier Dr. R K Sharma (VSM) is a Delhi-based IVF
-              specialist, gynecologist, and obstetrician. He has been
-              working since 1981. He is a reputed IVF specialist with more
-              than 15,000 IVF cycles under his belt. Dr. RK Sharma is among
-              the best IVF specialists in Delhi. His areas of specialization
-              are infertility, endoscopy, obstetrics, and gynecology.
-              Brigadier Dr. R K Sharma completed his MBBS from Pune
-              University in 1981. He did his MD in Obstetrics & Gynecology
-              from Pune University passing out in 1989. He trained in IVF at
-              Bombay Hospital in 1995. Brigadier Dr. R K Sharma completed
-              his MBBS from Pune University in 1981. He did his MD in
-              Obstetrics & Gynecology from Pune University passing out in
-              1989. He trained in IVF at Bombay Hospital in 1995.
-
-              <div
-                class="w-[55%] absolute bottom-0 right-0 bg rm-shadow pl-10 sm:pl-14"
-              >
-                <span
-                  id="aboutTab-rmBtn-0"
-                  class="hidden"
-                  onclick="showAndHideModal('show',0)"
-                  >Read More</span
-                >
+              class="information grow flex flex-col h-full pt-8"
+              x-show="openTab === 1"
+            >
+              <div class="about">
+                <h3 class="font-medium text-lg mb-2">
+                  <span class="border-b-2 border-pink-600">About</span> Dr.
+                  Brigadier R K Sharma
+                </h3>
+                <p class="text-justify mb-1">
+                  Brigadier Dr. R K Sharma (VSM) is a Delhi-based IVF
+                  specialist, gynecologist, and obstetrician. He has been
+                  working since 1981. He is a reputed IVF specialist with more
+                  than 15,000 IVF cycles under his belt. Dr. RK Sharma is among
+                  the best IVF specialists in Delhi. His areas of specialization
+                  are infertility, endoscopy, obstetrics, and gynecology.
+                  Brigadier Dr. R K Sharma completed his MBBS from Pune
+                  University in 1981. He did his MD in Obstetrics & Gynecology
+                  from Pune University passing out in 1989. He trained in IVF at
+                  Bombay Hospital in 1995. Brigadier Dr. R K Sharma is presently
+                  working at Maa Fertility Clinic, Janakpuri Delhi. The cost of
+                  IVF by Dr. R K Sharma at Maa Fertility Centre Janakpuri is Rs
+                  1,25,000 including the cost of medicines. </p><p class="text-justify mb-1">He is a member of
+                  ISAR, IFS, and ESI. Dr. R K Sharma was instrumental in setting
+                  up Assisted Reproduction Technology Centre at Command
+                  Hospital, AFMC Pune. He also help set up ART Centre at Army
+                  Hospital, Delhi. He is an examiner for various examinations
+                  like the UPSC board, post-doctoral fellowship in Reproductive
+                  Medicine, etc. The doctor shows empathy towards his patients.
+                  He gives personal attention to his patients and spends time to
+                  understand their case history. Dr. Sharma currently consults
+                  at Maa Fertility Clinic, Janakpuri. He is available for
+                  consultation between 11:00 AM to 4:00 PM Monday to Friday. </p>
+                  <p class="text-justify mb-1">Dr.
+                  R K Sharma has thirty nine years experience in the field of
+                  medicine. He has been working as a specialist for the last
+                  thirty one years. He is also the professor of Obstetrics &
+                  Gynecology at AFMC, Pune. He performed his first IVF procedure
+                  in 1994. The field of IVF was new and present-day
+                  technological advancement was not available. The patients were
+                  a couple suffering from infertility for ten years. His very
+                  first procedure was successful and the couple was blessed with
+                  a child. The gratitude of the patients prompted him pursue the
+                  path of ART. The Brigadier served in the Indian Armed Forces
+                  for thirty years. He was awarded the prestigious Visisth Seva
+                  Medal (VSM). He set up IVF clinics at Army Hospitals including
+                  the prestigious Army Hospital (Research & Referral). Dr.
+                  (Brig) R K Sharma (VSM) is also an examiner for Post Doctoral
+                  Fellowship in Reproductive Medicine. The doctor has also
+                  worked at Primus Hospital, Chanakyapuri New Delhi. He has
+                  delivered lectures & presentations on various fields of IVF &
+                  ART.</p>
+                  <p class="text-justify">He has also been instrumental in designing protocols in
+                  the field of IVF, which are acknowledged and used by doctors
+                  across the country.</p>
+                </p>
               </div>
             </div>
-          </div>
-          <!-- tab content 3 -->
+            <!-- tab content 2 -->
 
-          <div x-show="openTab === 3" class="">
-            <h3 class="tabs-h3 xsm:text-md">Highlights | Dr. R K Sharma</h3>
-            <div class="hightlightTab-content">Highlights TAB</div>
-          </div>
-          <!-- tab content 4 -->
-
-          <div x-show="openTab === 4" class="">
-            <h3 class="tabs-h3 xsm:text-md">
-              Where to consult Dr. R K Sharma
-            </h3>
-            <div class="consultTab-content">
-              <div
-                class="container mx-auto bg-white border border-gray-300 rounded-md shadow-md"
-              >
-                <div class="flex flex-col divide-y divide-gray-300">
-                  <!-- First Row: Hospital Name -->
-                  <div
-                    class="py-1.5 px-3 text-base font-semibold text-left"
-                  >
-                    Maa Fertility Clinic
-                  </div>
-                  <!-- Second Row: Location and Days/Time -->
-                  <div class="flex">
-                    <!-- Location -->
-                    <div
-                      class="py-1.5 px-3 border-r border-gray-300 text-sm"
-                    >
-                      <div class="text-left font-medium">
-                        Kittur, Karnataka
-                      </div>
-                    </div>
-                    <!-- Days and Time -->
-                    <div class="py-1.5 px-3 flex-1 text-sm">
-                      <div class="">
-                        <div class="flex justify-between">
-                          <span>Mon, Tue, Wed, Thu:</span>
-                          <span>06:00PM - 08:00PM</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span></span>
-                          <span>08:30PM - 10:00PM</span>
-                        </div>
-                        <hr class="my-1" />
-                        <div class="flex justify-between">
-                          <span>Fri, Sat:</span>
-                          <span>06:00AM - 02:00PM</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span></span>
-                          <span>06:00PM - 08:00PM</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div x-show="openTab === 2">
+              education
             </div>
-          </div>
+            <!-- tab content 3 -->
+
+            <div x-show="openTab === 3" class="">
+              
+            </div>
+            <!-- tab content 4 -->
+
+            <div x-show="openTab === 4" class="">
+              
+            </div>
           </div>
         </div>
       </div>
