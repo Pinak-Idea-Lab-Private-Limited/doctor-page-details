@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+ 
+    .info-texts {
+        @apply flex items-center gap-3 text-stone-900;
+    }
+    /* info tab h2 */
+    .info-h2 {
+        @apply  lg:text-[1.7rem] sm:text-2xl text-[1.2rem] font-sans font-bold mb-1 text-stone-950;
+    }
+    /* ot;her tabs h3 */
+    .tabs-h3{
+        @apply lg:text-[23px]  xl:text-2xl text-xl font-sans font-bold mb-2 text-stone-950;
+    }
+    .fz-scale{
+        font-size: calc(16px + 2 * ((100vw - 300*1px) / (2920 - 300)));
+    }
+    /* mrv = medical registratoin verified */
+    .fz-mrv{
+        font-size: calc(14px + 2 * ((100vw - 300*1px) / (2920 - 300)));
+    }
+    #aboutTab-rmBtn-0, #aboutTab-rmBtn-1, #aboutTab-rmBtn-2, #aboutTab-rmBtn-3, #aboutTab-rmBtn-4, #aboutTab-rmBtn-5{
+        cursor: pointer;
+        @apply rounded-full bg-blue-400 text-[#f2f2f2] px-2 py-0.5;
+        font-size: 13px;
+        font-weight: semibold;
+    }
+
+ 
+    /* about tab content, highlights tab content and consult tab content */
+    .aboutTab-content, .hightlightTab-content, .consultTab-content{
+        @apply  fz-scale max-h-52 xs:max-h-48 text-justify pr-3 overflow-hidden text-stone-900;
+    }
+
+    .rm-shadow{
+        background-image:  linear-gradient(90deg,rgba(255, 255, 255, 0),#fff 20%);
+    }
+    
+}

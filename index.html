@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor Collection Page</title>
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/fontawesome.min.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"
+    ></script>
+    <link rel="stylesheet" href="./icons.css" />
+  </head>
+
+  <body class="bg-[#f2f2f2]">
+    <!-- About section display modal  -->
+    <div
+      id="dc-modal"
+      class="relative z-10 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+      ></div>
+
+      <div class="fixed inset-0 z-10 overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl"
+          >
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                  <h3
+                    id="modalTitle"
+                    class="text-black text-left lg:text-[23px] xsm:text-md xl:text-2xl text-xl font-sans font-bold mb-2"
+                    id="modal-title"
+                  >
+                    About | Dr ashish magadum
+                  </h3>
+                  <div class="mt-2">
+                    <p
+                      id="modalContent"
+                      class="pr-3 text-justify text-gray-700 fz-scale max-h-[60vh] overflow-auto"
+                    >
+                      modalContact.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                onclick="showAndHideModal('hide')"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ratings icon modal -->
+    <div
+      id="ratingInfo-modal"
+      class="relative z-10 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+      ></div>
+
+      <div class="fixed inset-0 z-10 overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-3 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+          >
+            <div class="bg-white px-3 py-3 sm:p-3 sm:pb-3">
+              <div class="sm:flex sm:items-start">
+                <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                  <div class="mt-2">
+                    <p
+                      id="ratings-modalContent"
+                      class="pr-3 flex text-gray-700 fz-scale overflow-auto"
+                    >
+                      <span class="pt-1">
+                        <i
+                          class="inline fa-rating-info px-1 bg-[#1e3050db] before:text-[#fff] after:text-[#fff]"
+                        ></i>
+                      </span>
+                      <span class="text-left">
+                        This score is an aggregation of ratings for this doctor
+                        on Pregawish.com & trusted platforms on the Internet.
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                onclick="ratingModalToggle('hide')"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- doctors cards -->
+    <div
+      class="flex px-0 lg:px-4 mt-2 gap-3 flex-col lg:flex-row max-w-[1536px] mx-auto"
+    >
+      <!-- Left Side Content -->
+      <div class="w-full lg:w-[70%]">
+        <!-- Doctor Card 1 -->
+        <div
+          class="doc-card bg-white lg:rounded-lg mb-8 p-5 relative"
+          x-data="{
+        openTab:1,
+      }"
+        >
+        <div class="absolute w-10 h-5 right-5 top-2 flex gap-2 items-start justify-center">
+            <i class="fa-share-nodes bg-teal-200 rounded-full p-2 cursor-pointer z-50"></i>
+            <i class="fa-bookmark bg-teal-200 rounded-full p-2 cursor-pointer z-50"></i>
+        </div>
+          <div class="xs:flex gap-0 xs:gap-4 lg:gap-7 mb-5">
+            <div class="img grow-0 gap-3 w-full xs:w-[35%] sm:w-1/4">
+              <img
+                src="https://www.pregawish.com/uploads/doctor/thumbnail/207/dr-r-k-sharma.jpg"
+                alt=""
+                class="min-w-[100px] w-full md:min-w-[180px] rounded-lg"
+              />
+            </div>
+            <div
+              class="w-full xs:w-[65%] sm:w-3/4 xs:max-h-[15rem] xs:h-[15rem] max-h-[18rem] h-[18rem] relative mr-[15px] pt-4 xs:pt-0"
+            >
+            <div
+            class="information grow flex flex-col h-full"
+          >
+            <h2 class="info-h2">Dr. Brigadier R K Sharma</h2>
+
+            <p class="info-texts fz-scale font-clamp gap-2 mt-2 xsm:mt-0">
+              <i class="fa-graduation"></i> MBBS, MD (Obs & Gyn), VSM
+            </p>
+            <p class="info-texts fz-mrv">
+              <i class="fa-badge"></i> Medical Registration Verified
+            </p>
+
+            <div class="flex my-3 items-center doc1">
+              <div class="rating">
+                <div class="stars"></div>
+              </div>
+              <span class="number-rating ml-2">(100)</span>
+              <i
+                class="fa-rating-info"
+                onclick="ratingModalToggle('show')"
+              ></i>
+            </div>
+
+            <div class="flex flex-col sm:flex-row w-full">
+              
+            </div>
+          </div>
+            </div>
+          </div>
+
+          <!-- tab buttons -->
+          <nav aria-label="Tabs">
+            <ul class="flex border-b border-gray-100 text-xs">
+              <li class="flex-1" @click="openTab = 1">
+                <button class="relative block p-2 md:p-4 w-full" href="#">
+                  <span
+                    x-show="openTab === 1"
+                    class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"
+                  ></span>
+
+                  <div class="flex items-center justify-center gap-1 md:gap-4">
+                    <i class="fa-info"></i>
+                    <span class="font-medium text-gray-900 uppercase">
+                      Info
+                    </span>
+                  </div>
+                </button>
+              </li>
+
+              <li class="flex-1" @click="openTab = 2">
+                <button class="relative block p-2 md:p-4 w-full">
+                  <span
+                    x-show="openTab === 2"
+                    class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"
+                  ></span>
+                  <div class="flex items-center justify-center gap-1 md:gap-4">
+                    <i class="fa-about"></i>
+                    <span class="font-medium text-gray-900 uppercase">
+                      About
+                    </span>
+                  </div>
+                </button>
+              </li>
+
+              <li class="flex-1" @click="openTab = 3">
+                <button class="relative block p-2 md:p-4 w-full" href="#">
+                  <span
+                    x-show="openTab === 3"
+                    class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"
+                  ></span>
+                  <div class="flex items-center justify-center gap-1 md:gap-4">
+                    <i class="fa-highlights"></i>
+                    <span class="font-medium text-gray-900 uppercase">
+                      Highlights
+                    </span>
+                  </div>
+                </button>
+              </li>
+
+              <li class="flex-1" @click="openTab = 4">
+                <button class="relative block p-2 md:p-4 w-full" href="#">
+                  <span
+                    x-show="openTab === 4"
+                    class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"
+                  ></span>
+                  <div class="flex items-center justify-center gap-1 md:gap-4">
+                    <i class="fa-consult"></i>
+                    <span class="font-medium text-gray-900 uppercase">
+                      Consult
+                    </span>
+                  </div>
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <div>
+            <!-- tab content 1 -->
+            <div
+            class="information grow flex flex-col h-full"
+            x-show="openTab === 1"
+          >
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus tenetur sequi dolorum sunt ut magni perferendis deserunt? Eius, temporibus ducimus quos odit dignissimos corporis placeat quas, totam nisi, voluptatum accusantium. Quia velit qui ratione numquam mollitia tenetur enim repellat deserunt voluptatibus voluptate. Dolore maiores dicta eligendi. Porro voluptatem debitis nemo.</p>
+          </div>
+          <!-- tab content 2 -->
+
+          <div x-show="openTab === 2">
+            <h3 class="tabs-h3 xsm:text-md">About | Dr. R K Sharma</h3>
+            <div class="aboutTab-content relative">
+              Brigadier Dr. R K Sharma (VSM) is a Delhi-based IVF
+              specialist, gynecologist, and obstetrician. He has been
+              working since 1981. He is a reputed IVF specialist with more
+              than 15,000 IVF cycles under his belt. Dr. RK Sharma is among
+              the best IVF specialists in Delhi. His areas of specialization
+              are infertility, endoscopy, obstetrics, and gynecology.
+              Brigadier Dr. R K Sharma completed his MBBS from Pune
+              University in 1981. He did his MD in Obstetrics & Gynecology
+              from Pune University passing out in 1989. He trained in IVF at
+              Bombay Hospital in 1995. Brigadier Dr. R K Sharma completed
+              his MBBS from Pune University in 1981. He did his MD in
+              Obstetrics & Gynecology from Pune University passing out in
+              1989. He trained in IVF at Bombay Hospital in 1995.
+
+              <div
+                class="w-[55%] absolute bottom-0 right-0 bg rm-shadow pl-10 sm:pl-14"
+              >
+                <span
+                  id="aboutTab-rmBtn-0"
+                  class="hidden"
+                  onclick="showAndHideModal('show',0)"
+                  >Read More</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- tab content 3 -->
+
+          <div x-show="openTab === 3" class="">
+            <h3 class="tabs-h3 xsm:text-md">Highlights | Dr. R K Sharma</h3>
+            <div class="hightlightTab-content">Highlights TAB</div>
+          </div>
+          <!-- tab content 4 -->
+
+          <div x-show="openTab === 4" class="">
+            <h3 class="tabs-h3 xsm:text-md">
+              Where to consult Dr. R K Sharma
+            </h3>
+            <div class="consultTab-content">
+              <div
+                class="container mx-auto bg-white border border-gray-300 rounded-md shadow-md"
+              >
+                <div class="flex flex-col divide-y divide-gray-300">
+                  <!-- First Row: Hospital Name -->
+                  <div
+                    class="py-1.5 px-3 text-base font-semibold text-left"
+                  >
+                    Maa Fertility Clinic
+                  </div>
+                  <!-- Second Row: Location and Days/Time -->
+                  <div class="flex">
+                    <!-- Location -->
+                    <div
+                      class="py-1.5 px-3 border-r border-gray-300 text-sm"
+                    >
+                      <div class="text-left font-medium">
+                        Kittur, Karnataka
+                      </div>
+                    </div>
+                    <!-- Days and Time -->
+                    <div class="py-1.5 px-3 flex-1 text-sm">
+                      <div class="">
+                        <div class="flex justify-between">
+                          <span>Mon, Tue, Wed, Thu:</span>
+                          <span>06:00PM - 08:00PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                          <span></span>
+                          <span>08:30PM - 10:00PM</span>
+                        </div>
+                        <hr class="my-1" />
+                        <div class="flex justify-between">
+                          <span>Fri, Sat:</span>
+                          <span>06:00AM - 02:00PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                          <span></span>
+                          <span>06:00PM - 08:00PM</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side Content -->
+      <div class="w-full md:w-[30%] border border-gray-400">
+        <h1 class="text-3xl text-center"></h1>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
