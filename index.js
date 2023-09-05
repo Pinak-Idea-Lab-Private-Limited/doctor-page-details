@@ -112,3 +112,11 @@ const ratingModalToggle = (state) => {
     rModal.classList.add("hidden");
   }
 };
+
+// read more
+const readMore = document.querySelector('#readbtn')
+const readText = document.querySelector('#more')
+readMore.addEventListener('click', () => {
+    readText.classList.toggle('hidden')
+    readMore.innerText === "Read More" ? readMore.innerText = "Read Less" : readMore.innerText = "Read More";
+})
