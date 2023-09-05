@@ -1,446 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Doctor Collection Page</title>
-    <link rel="stylesheet" href="./dist/output.css" />
-    <link rel="stylesheet" href="./css/all.min.css" />
-    <link rel="stylesheet" href="./css/fontawesome.min.css" />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"
-    ></script>
-    <link rel="stylesheet" href="./icons.css" />
-  </head>
 
-  <body class="bg-[#f2f2f2]">
-    <!-- About section display modal  -->
-    <div
-      id="dc-modal"
-      class="relative z-10 hidden"
-      aria-labelledby="modal-title"
-      role="dialog"
-      aria-modal="true"
-    >
-      <div
-        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
-      ></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctor Collection Page</title>
+  <link rel="stylesheet" href="./dist/output.css" />
+  <link rel="stylesheet" href="./css/all.min.css" />
+  <link rel="stylesheet" href="./css/fontawesome.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="./icons.css" />
+</head>
 
-      <div class="fixed inset-0 z-10 overflow-y-auto">
+<body class="bg-[#f2f2f2]">
+  <!-- About section display modal  -->
+  <div id="dc-modal" class="relative z-10 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+    <div class="fixed inset-0 z-10 overflow-y-auto">
+      <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
         <div
-          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
-        >
-          <div
-            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl"
-          >
-            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-              <div class="sm:flex sm:items-start">
-                <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                  <h3
-                    id="modalTitle"
-                    class="text-black text-left lg:text-[23px] xsm:text-md xl:text-2xl text-xl font-sans font-bold mb-2"
-                    id="modal-title"
-                  >
-                    About | Dr ashish magadum
-                  </h3>
-                  <div class="mt-2">
-                    <p
-                      id="modalContent"
-                      class="pr-3 text-justify text-gray-700 fz-scale max-h-[60vh] overflow-auto"
-                    >
-                      modalContact.
-                    </p>
-                  </div>
+          class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl">
+          <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+            <div class="sm:flex sm:items-start">
+              <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                <h3 id="modalTitle"
+                  class="text-black text-left lg:text-[23px] xsm:text-md xl:text-2xl text-xl font-sans font-bold mb-2"
+                  id="modal-title">
+                  About | Dr ashish magadum
+                </h3>
+                <div class="mt-2">
+                  <p id="modalContent" class="pr-3 text-justify text-gray-700 fz-scale max-h-[60vh] overflow-auto">
+                    modalContact.
+                  </p>
                 </div>
               </div>
             </div>
-            <div
-              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
-            >
-              <button
-                type="button"
-                class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                onclick="showAndHideModal('hide')"
-              >
-                Close
-              </button>
-            </div>
+          </div>
+          <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+            <button type="button"
+              class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              onclick="showAndHideModal('hide')">
+              Close
+            </button>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- ratings icon modal -->
-    <div
-      id="ratingInfo-modal"
-      class="relative z-20 hidden"
-      aria-labelledby="modal-title"
-      role="dialog"
-      aria-modal="true"
-    >
-      <div
-        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
-      ></div>
+  <!-- ratings icon modal -->
+  <div id="ratingInfo-modal" class="relative z-20 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
-      <div class="fixed inset-0 z-10 overflow-y-auto">
+    <div class="fixed inset-0 z-10 overflow-y-auto">
+      <div class="flex min-h-full items-end justify-center p-3 text-center sm:items-center sm:p-0">
         <div
-          class="flex min-h-full items-end justify-center p-3 text-center sm:items-center sm:p-0"
-        >
-          <div
-            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
-          >
-            <div class="bg-white px-3 py-3 sm:p-3 sm:pb-3">
-              <div class="sm:flex sm:items-start">
-                <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                  <div class="mt-2">
-                    <p
-                      id="ratings-modalContent"
-                      class="pr-3 flex text-gray-700 fz-scale overflow-auto"
-                    >
-                      <span class="pt-1">
-                        <i
-                          class="inline fa-rating-info px-1 bg-[#1e3050db] before:text-[#fff] after:text-[#fff]"
-                        ></i>
-                      </span>
-                      <span class="text-left">
-                        This score is an aggregation of ratings for this doctor
-                        on Pregawish.com & trusted platforms on the Internet.
-                      </span>
-                    </p>
-                  </div>
+          class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+          <div class="bg-white px-3 py-3 sm:p-3 sm:pb-3">
+            <div class="sm:flex sm:items-start">
+              <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                <div class="mt-2">
+                  <p id="ratings-modalContent" class="pr-3 flex text-gray-700 fz-scale overflow-auto">
+                    <span class="pt-1">
+                      <i class="inline fa-rating-info px-1 bg-[#1e3050db] before:text-[#fff] after:text-[#fff]"></i>
+                    </span>
+                    <span class="text-left">
+                      This score is an aggregation of ratings for this doctor
+                      on Pregawish.com & trusted platforms on the Internet.
+                    </span>
+                  </p>
                 </div>
               </div>
             </div>
-            <div
-              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
-            >
-              <button
-                type="button"
-                class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                onclick="ratingModalToggle('hide')"
-              >
-                Close
-              </button>
-            </div>
+          </div>
+          <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+            <button type="button"
+              class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              onclick="ratingModalToggle('hide')">
+              Close
+            </button>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- doctors cards -->
-    <div
-      class="flex px-0 lg:px-4 mt-2 gap-3 flex-col lg:flex-row max-w-[1536px] mx-auto"
-    >
-      <!-- Left Side Content -->
-      <div class="w-full lg:w-[70%]">
-        <!-- Doctor Card 1 -->
-        <div
-          class="doc-card bg-white lg:rounded-lg mb-8 p-5 relative"
-          x-data="{
+  <!-- doctors cards -->
+  <div class="flex px-0 lg:px-4 mt-2 gap-3 flex-col lg:flex-row max-w-[1536px] mx-auto">
+    <!-- Left Side Content -->
+    <div class="w-full lg:w-[70%]">
+      <!-- Doctor Card 1 -->
+      <div class="doc-card bg-white lg:rounded-lg mb-8 p-5 relative" x-data="{
         openTab:1,
-      }"
-        >
+      }">
+        <div class="absolute w-10 h-5 right-5 top-2 flex gap-2 items-start justify-center">
+          <i class="fa-share-nodes bg-teal-200 rounded-full p-2 cursor-pointer z-10"></i>
+          <i class="fa-bookmark bg-teal-200 rounded-full p-2 cursor-pointer z-10"></i>
+        </div>
+        <div class="xs:flex gap-0 xs:gap-4 lg:gap-7 mb-5">
+          <div class="img grow-0 gap-3 w-full xs:w-[35%] sm:w-1/4">
+            <img src="https://www.pregawish.com/uploads/doctor/thumbnail/207/dr-r-k-sharma.jpg" alt=""
+              class="min-w-[100px] w-full md:min-w-[180px] rounded-lg" />
+          </div>
           <div
-            class="absolute w-10 h-5 right-5 top-2 flex gap-2 items-start justify-center"
-          >
-            <i
-              class="fa-share-nodes bg-teal-200 rounded-full p-2 cursor-pointer z-10"
-            ></i>
-            <i
-              class="fa-bookmark bg-teal-200 rounded-full p-2 cursor-pointer z-10"
-            ></i>
-          </div>
-          <div class="xs:flex gap-0 xs:gap-4 lg:gap-7 mb-5">
-            <div class="img grow-0 gap-3 w-full xs:w-[35%] sm:w-1/4">
-              <img
-                src="https://www.pregawish.com/uploads/doctor/thumbnail/207/dr-r-k-sharma.jpg"
-                alt=""
-                class="min-w-[100px] w-full md:min-w-[180px] rounded-lg"
-              />
-            </div>
-            <div
-              class="w-full xs:w-[65%] sm:w-3/4 xs:max-h-[15rem] xs:h-[15rem] max-h-[18rem] h-[18rem] relative mr-[15px] pt-4 xs:pt-0"
-            >
-              <div class="information grow flex flex-col h-full">
-                <h2 class="info-h2">Dr. Brigadier R K Sharma</h2>
+            class="w-full xs:w-[65%] sm:w-3/4 xs:max-h-[15rem] xs:h-[15rem] max-h-[18rem] h-[18rem] relative mr-[15px] pt-4 xs:pt-0">
+            <div class="information grow flex flex-col h-full">
+              <h2 class="info-h2">Dr. Brigadier R K Sharma</h2>
 
-                <p class="info-texts fz-scale font-clamp gap-2 mt-2 xsm:mt-0">
-                  <i class="fa-graduation"></i> MBBS, MD (Obs & Gyn), VSM
-                </p>
-                <p class="info-texts fz-mrv">
-                  <i class="fa-badge"></i> Medical Registration Verified
-                </p>
+              <p class="info-texts fz-scale font-clamp gap-2 mt-2 xsm:mt-0">
+                <i class="fa-graduation"></i> MBBS, MD (Obs & Gyn), VSM
+              </p>
+              <p class="info-texts fz-mrv">
+                <i class="fa-badge"></i> Medical Registration Verified
+              </p>
 
-                <div class="flex my-3 items-center doc1">
-                  <span class="number-rating mr-2">(100)</span>
-                  <div class="rating">
-                    <div class="stars"></div>
-                  </div>
-                  <span class="number-rating ml-2">(360 Reviews)</span>
-                  <i class="fa-rating-info" onclick="ratingModalToggle('show')"></i>
+              <div class="flex my-3 items-center doc1">
+                <span class="number-rating mr-2">(100)</span>
+                <div class="rating">
+                  <div class="stars"></div>
                 </div>
+                <span class="number-rating ml-2">(360 Reviews)</span>
+                <i class="fa-rating-info" onclick="ratingModalToggle('show')"></i>
+              </div>
 
-                <div class="flex flex-col sm:flex-row  w-full">
-                  <div class=" flex flex-col w-full lg:w-1/2">
+              <div class="flex flex-col sm:flex-row  w-full">
+                <div class=" flex flex-col w-full lg:w-1/2">
 
-                    <p class="info-texts fz-scale ">
-                      <i class="fa-experience"></i>28 Years Experience
-                    </p>
-                    <p class="info-texts fz-scale">
-                      <i class="fa-baby"></i>10000 IVF Cycles
-                    </p>
-                    <p class="info-texts fz-scale">
-                      <i class="fa-phone"></i>+91-9814325187
-                    </p>
-  
-                  </div>
-                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 my-3 px-2 rounded-lg xs:hidden">
-                    Call Now
-                  </button>
-                  <div class=" mt-0 sm:flex flex-col w-full max-w-[250px] lg:w-1/2 hidden sm:visible">
+                  <p class="info-texts fz-scale ">
+                    <i class="fa-experience"></i>28 Years Experience
+                  </p>
+                  <p class="info-texts fz-scale">
+                    <i class="fa-baby"></i>10000 IVF Cycles
+                  </p>
+                  <p class="info-texts fz-scale">
+                    <i class="fa-phone"></i>+91-9814325187
+                  </p>
 
-                    <p class="flex gap-6 items-center justify-between">
-                      <span class="info-texts fz-scale"><i class="fa-location"></i>Belagavi</span><span class="gap-1">
-                        <i class="fa-rupee"></i>
-                        1000</span>
-                    </p>
-  
-                    <p class="mt-2 info-texts fz-scale">First Consultancy Free</p>
-                  </div>
                 </div>
-
-                
-              </div>
-            </div>
-          </div>
-
-          <!-- tab buttons -->
-          <nav aria-label="Tabs">
-            <ul class="flex border-b border-gray-100 text-xs">
-              <li class="flex-1" @click="openTab = 1">
-                <button class="relative block p-2 md:p-4 w-full" href="#">
-                  <span
-                    x-show="openTab === 1"
-                    class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"
-                  ></span>
-
-                  <div class="flex items-center justify-center gap-1 md:gap-4">
-                    <i class="fa-about"></i>
-                    <span class="font-medium text-gray-900 uppercase">
-                      About
-                    </span>
-                  </div>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 my-3 px-2 rounded-lg xs:hidden">
+                  Call Now
                 </button>
-              </li>
+                <div class=" mt-0 sm:flex flex-col w-full max-w-[250px] lg:w-1/2 hidden sm:visible">
 
-              <li class="flex-1" @click="openTab = 2">
-                <button class="relative block p-2 md:p-4 w-full">
-                  <span
-                    x-show="openTab === 2"
-                    class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"
-                  ></span>
-                  <div class="flex items-center justify-center gap-1 md:gap-4">
-                    <i class="fa-graduation-cap"></i>
-                    <span class="font-medium text-gray-900 uppercase">
-                      Education & Trainings
-                    </span>
-                  </div>
-                </button>
-              </li>
+                  <p class="flex gap-6 items-center justify-between">
+                    <span class="info-texts fz-scale"><i class="fa-location"></i>Belagavi</span><span class="gap-1">
+                      <i class="fa-rupee"></i>
+                      1000</span>
+                  </p>
 
-              <li class="flex-1" @click="openTab = 3">
-                <button class="relative block p-2 md:p-4 w-full" href="#">
-                  <span
-                    x-show="openTab === 3"
-                    class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"
-                  ></span>
-                  <div class="flex items-center justify-center gap-1 md:gap-4">
-                    <i class="fa-highlights"></i>
-                    <span class="font-medium text-gray-900 uppercase">
-                      Highlights
-                    </span>
-                  </div>
-                </button>
-              </li>
-
-              <li class="flex-1" @click="openTab = 4">
-                <button class="relative block p-2 md:p-4 w-full" href="#">
-                  <span
-                    x-show="openTab === 4"
-                    class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"
-                  ></span>
-                  <div class="flex items-center justify-center gap-1 md:gap-4">
-                    <i class="fa-consult"></i>
-                    <span class="font-medium text-gray-900 uppercase">
-                      Consult
-                    </span>
-                  </div>
-                </button>
-              </li>
-            </ul>
-          </nav>
-          <div>
-            <!-- tab content 1 -->
-            <div
-              class="information grow flex flex-col h-full pt-8"
-              x-show="openTab === 1"
-            >
-              <div class="about">
-                <div class="about-sec">
-                  <h3 class="font-medium text-lg mb-2">
-                    <span class="border-b-2 border-pink-600">About</span> Dr.
-                    Brigadier R K Sharma
-                  </h3>
-                  <p class="text-justify mb-1">
-                    Brigadier Dr. R K Sharma (VSM) is a Delhi-based IVF
-                    specialist, gynecologist, and obstetrician. He has been
-                    working since 1981. He is a reputed IVF specialist with more
-                    than 15,000 IVF cycles under his belt. Dr. RK Sharma is among
-                    the best IVF specialists in Delhi. His areas of specialization
-                    are infertility, endoscopy, obstetrics, and gynecology.
-                    Brigadier Dr. R K Sharma completed his MBBS from Pune
-                    University in 1981. He did his MD in Obstetrics & Gynecology
-                    from Pune University passing out in 1989. He trained in IVF at
-                    Bombay Hospital in 1995. Brigadier Dr. R K Sharma is presently
-                    working at Maa Fertility Clinic, Janakpuri Delhi. The cost of
-                    IVF by Dr. R K Sharma at Maa Fertility Centre Janakpuri is Rs
-                    1,25,000 including the cost of medicines. </p>
-                    <span class="hidden" id="more">
-                      <p class="text-justify mb-1">He is a member of
-                        ISAR, IFS, and ESI. Dr. R K Sharma was instrumental in setting
-                        up Assisted Reproduction Technology Centre at Command
-                        Hospital, AFMC Pune. He also help set up ART Centre at Army
-                        Hospital, Delhi. He is an examiner for various examinations
-                        like the UPSC board, post-doctoral fellowship in Reproductive
-                        Medicine, etc. The doctor shows empathy towards his patients.
-                        He gives personal attention to his patients and spends time to
-                        understand their case history. Dr. Sharma currently consults
-                        at Maa Fertility Clinic, Janakpuri. He is available for
-                        consultation between 11:00 AM to 4:00 PM Monday to Friday. </p>
-                        <p class="text-justify mb-1">Dr.
-                        R K Sharma has thirty nine years experience in the field of
-                        medicine. He has been working as a specialist for the last
-                        thirty one years. He is also the professor of Obstetrics &
-                        Gynecology at AFMC, Pune. He performed his first IVF procedure
-                        in 1994. The field of IVF was new and present-day
-                        technological advancement was not available. The patients were
-                        a couple suffering from infertility for ten years. His very
-                        first procedure was successful and the couple was blessed with
-                        a child. The gratitude of the patients prompted him pursue the
-                        path of ART. The Brigadier served in the Indian Armed Forces
-                        for thirty years. He was awarded the prestigious Visisth Seva
-                        Medal (VSM). He set up IVF clinics at Army Hospitals including
-                        the prestigious Army Hospital (Research & Referral). Dr.
-                        (Brig) R K Sharma (VSM) is also an examiner for Post Doctoral
-                        Fellowship in Reproductive Medicine. The doctor has also
-                        worked at Primus Hospital, Chanakyapuri New Delhi. He has
-                        delivered lectures & presentations on various fields of IVF &
-                        ART.</p>
-                        <p class="text-justify">He has also been instrumental in designing protocols in
-                        the field of IVF, which are acknowledged and used by doctors
-                        across the country.</p>
-                      </p>
-                    </span>
-                    <button id="readbtn" class="bg-gray-400 p-1">Read More</button>
+                  <p class="mt-2 info-texts fz-scale">First Consultancy Free</p>
                 </div>
-                <h3 class="font-medium text-lg mb-2 mt-6">
-                  <span class="border-b-2 border-pink-600">Treatments</span> Offered by Dr. Brigadier R K Sharma
-                </h3>
-                <ul class="list-disc pl-6">
-                  <li>IVF</li>
-                  <li>Egg Donation</li>
-                  <li>Cryopreservation</li>
-                  <li>ICSI</li>
-                  <li>IUI</li>
-                  <li>Sperm Donation</li>
-                  <li>IMSI & PICS</li>
-                  <li>Ovulation Induction</li>
-                  <li>Endoscopy</li>
-                </ul>
-                <h3 class="font-medium text-lg mb-2 mt-6">
-                  <span class="border-b-2 border-pink-600">Medical</span> Registrations
-                </h3>
-                <ul class="list-disc pl-6">
-                  <li>39678, Delhi Medical Council, 2008</li>
-                </ul>
-                <h3 class="font-medium text-lg mb-2 mt-6">
-                  <span class="border-b-2 border-pink-600">Education</span>
-                </h3>
-                <ul class="list-disc pl-6">
-                  <li>MBBS,	1981, Armed Forces Medical College,	Pune University</li>
-                  <li>MD	Obstetrics & Gynaecology,	1989,	Armed Forces Medical College,	Pune University</li>
-                </ul>
-                <h3 class="font-medium text-lg mb-2 mt-6">
-                  <span class="border-b-2 border-pink-600">Trainings</span>
-                </h3>
-                <ul class="list-disc pl-6">
-                  <li>IVF,	1995,	Bombay Hospital</li>
-                </ul>
-                <h3 class="font-medium text-lg mb-2 mt-6">
-                  <span class="border-b-2 border-pink-600">Memberships</span>
-                </h3>
-                <ul class="list-disc pl-6">
-                  <li>Federation of Obstetric and Gynaecological Societies of India</li>
-                  <li>Indian Society of Assisted Reproduction</li>
-                  <li>Indian Fertility Society</li>
-                  <li>Endoscopy Society of India</li>
-                </ul>
-                <h3 class="font-medium text-lg mb-2 mt-6">
-                  <span class="border-b-2 border-pink-600">Awards & Recognitions</span>
-                </h3>
-                <ul class="list-disc pl-6">
-                  <li>Vishisht Sewa Medal for outstanding service</li>
-                  <li>Supervisor for PhD in reproductive medicine</li>
-                  <li>Examiner for Post Doctoral fellowship in Reproductive Medicine DNB India</li>
-                  <li>Examiner for UPSC Board</li>
-                  <li>Advisor to numerous ART programmes of Government Medical College & Private Institutes in India.</li>
-                  <li>Reviewer for National & International Journals</li>
-                  <li>Co-opted executive committee member of ISAR</li>
-                  <li>Former Secretary General of Indian Fertility society</li>
-                </ul>
-                
               </div>
-            </div>
-            <!-- tab content 2 -->
 
-            <div x-show="openTab === 2" class="information grow flex flex-col h-full pt-8 px-5">
-              <div class="education">
-                <h3 class="font-medium text-lg mb-2">
-                  <span class="border-b-2 border-pink-600">Education</span>
-                </h3>
-                <ul class="list-disc">
-                  <li>MBBS,	1981, Armed Forces Medical College,	Pune University</li>
-                  <li>MD	Obstetrics & Gynaecology,	1989,	Armed Forces Medical College,	Pune University</li>
-                </ul>
-                <h3 class="font-medium text-lg mb-2 mt-6">
-                  <span class="border-b-2 border-pink-600">Trainings</span>
-                </h3>
-                <ul class="list-disc">
-                  <li>IVF,	1995,	Bombay Hospital</li>
-                </ul>
-              </div>
-            </div>
-            <!-- tab content 3 -->
 
-            <div x-show="openTab === 3" class="">
-              
-            </div>
-            <!-- tab content 4 -->
-
-            <div x-show="openTab === 4" class="">
-              
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Right Side Content -->
-      <div class="w-full md:w-[30%] border border-gray-400">
-        <h1 class="text-3xl text-center"></h1>
+        <!-- tab buttons -->
+        <nav aria-label="Tabs">
+          <ul class="flex border-b border-gray-100 text-xs">
+            <li class="flex-1" @click="openTab = 1">
+              <button class="relative block p-2 md:p-4 w-full" href="#">
+                <span x-show="openTab === 1" class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"></span>
+
+                <div class="flex items-center justify-center gap-1 md:gap-4">
+                  <i class="fa-about"></i>
+                  <span class="font-medium text-gray-900 uppercase">
+                    About
+                  </span>
+                </div>
+              </button>
+            </li>
+
+            <li class="flex-1" @click="openTab = 2">
+              <button class="relative block p-2 md:p-4 w-full">
+                <span x-show="openTab === 2" class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"></span>
+                <div class="flex items-center justify-center gap-1 md:gap-4">
+                  <i class="fa-graduation-cap"></i>
+                  <span class="font-medium text-gray-900 uppercase">
+                    Education & Trainings
+                  </span>
+                </div>
+              </button>
+            </li>
+
+            <li class="flex-1" @click="openTab = 3">
+              <button class="relative block p-2 md:p-4 w-full" href="#">
+                <span x-show="openTab === 3" class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"></span>
+                <div class="flex items-center justify-center gap-1 md:gap-4">
+                  <i class="fa-highlights"></i>
+                  <span class="font-medium text-gray-900 uppercase">
+                    Highlights
+                  </span>
+                </div>
+              </button>
+            </li>
+
+            <li class="flex-1" @click="openTab = 4">
+              <button class="relative block p-2 md:p-4 w-full" href="#">
+                <span x-show="openTab === 4" class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"></span>
+                <div class="flex items-center justify-center gap-1 md:gap-4">
+                  <i class="fa-consult"></i>
+                  <span class="font-medium text-gray-900 uppercase">
+                    Consult
+                  </span>
+                </div>
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div>
+          <!-- tab content 1 -->
+          <div class="information grow flex flex-col h-full pt-8" x-show="openTab === 1">
+            <div class="about">
+              <div class="about-sec">
+                <h3 class="font-medium text-lg mb-2">
+                  <span class="border-b-2 border-pink-600">About</span> Dr.
+                  Brigadier R K Sharma
+                </h3>
+                <p class="text-justify mb-1">
+                  Brigadier Dr. R K Sharma (VSM) is a Delhi-based IVF
+                  specialist, gynecologist, and obstetrician. He has been
+                  working since 1981. He is a reputed IVF specialist with more
+                  than 15,000 IVF cycles under his belt. Dr. RK Sharma is among
+                  the best IVF specialists in Delhi. His areas of specialization
+                  are infertility, endoscopy, obstetrics, and gynecology.
+                  Brigadier Dr. R K Sharma completed his MBBS from Pune
+                  University in 1981. He did his MD in Obstetrics & Gynecology
+                  from Pune University passing out in 1989. He trained in IVF at
+                  Bombay Hospital in 1995. Brigadier Dr. R K Sharma is presently
+                  working at Maa Fertility Clinic, Janakpuri Delhi. The cost of
+                  IVF by Dr. R K Sharma at Maa Fertility Centre Janakpuri is Rs
+                  1,25,000 including the cost of medicines. </p>
+                <span class="hidden" id="more">
+                  <p class="text-justify mb-1">He is a member of
+                    ISAR, IFS, and ESI. Dr. R K Sharma was instrumental in setting
+                    up Assisted Reproduction Technology Centre at Command
+                    Hospital, AFMC Pune. He also help set up ART Centre at Army
+                    Hospital, Delhi. He is an examiner for various examinations
+                    like the UPSC board, post-doctoral fellowship in Reproductive
+                    Medicine, etc. The doctor shows empathy towards his patients.
+                    He gives personal attention to his patients and spends time to
+                    understand their case history. Dr. Sharma currently consults
+                    at Maa Fertility Clinic, Janakpuri. He is available for
+                    consultation between 11:00 AM to 4:00 PM Monday to Friday. </p>
+                  <p class="text-justify mb-1">Dr.
+                    R K Sharma has thirty nine years experience in the field of
+                    medicine. He has been working as a specialist for the last
+                    thirty one years. He is also the professor of Obstetrics &
+                    Gynecology at AFMC, Pune. He performed his first IVF procedure
+                    in 1994. The field of IVF was new and present-day
+                    technological advancement was not available. The patients were
+                    a couple suffering from infertility for ten years. His very
+                    first procedure was successful and the couple was blessed with
+                    a child. The gratitude of the patients prompted him pursue the
+                    path of ART. The Brigadier served in the Indian Armed Forces
+                    for thirty years. He was awarded the prestigious Visisth Seva
+                    Medal (VSM). He set up IVF clinics at Army Hospitals including
+                    the prestigious Army Hospital (Research & Referral). Dr.
+                    (Brig) R K Sharma (VSM) is also an examiner for Post Doctoral
+                    Fellowship in Reproductive Medicine. The doctor has also
+                    worked at Primus Hospital, Chanakyapuri New Delhi. He has
+                    delivered lectures & presentations on various fields of IVF &
+                    ART.</p>
+                  <p class="text-justify">He has also been instrumental in designing protocols in
+                    the field of IVF, which are acknowledged and used by doctors
+                    across the country.</p>
+                  </p>
+                </span>
+                <button id="readbtn" class="bg-gray-400 p-1">Read More</button>
+              </div>
+              <h3 class="font-medium text-lg mb-2 mt-6">
+                <span class="border-b-2 border-pink-600">Treatments</span> Offered by Dr. Brigadier R K Sharma
+              </h3>
+              <ul class="list-disc pl-6">
+                <li>IVF</li>
+                <li>Egg Donation</li>
+                <li>Cryopreservation</li>
+                <li>ICSI</li>
+                <li>IUI</li>
+                <li>Sperm Donation</li>
+                <li>IMSI & PICS</li>
+                <li>Ovulation Induction</li>
+                <li>Endoscopy</li>
+              </ul>
+              <h3 class="font-medium text-lg mb-2 mt-6">
+                <span class="border-b-2 border-pink-600">Medical</span> Registrations
+              </h3>
+              <ul class="list-disc pl-6">
+                <li>39678, Delhi Medical Council, 2008</li>
+              </ul>
+              <h3 class="font-medium text-lg mb-2 mt-6">
+                <span class="border-b-2 border-pink-600">Education</span>
+              </h3>
+              <ul class="list-disc pl-6">
+                <li>MBBS, 1981, Armed Forces Medical College, Pune University</li>
+                <li>MD Obstetrics & Gynaecology, 1989, Armed Forces Medical College, Pune University</li>
+              </ul>
+              <h3 class="font-medium text-lg mb-2 mt-6">
+                <span class="border-b-2 border-pink-600">Trainings</span>
+              </h3>
+              <ul class="list-disc pl-6">
+                <li>IVF, 1995, Bombay Hospital</li>
+              </ul>
+              <h3 class="font-medium text-lg mb-2 mt-6">
+                <span class="border-b-2 border-pink-600">Memberships</span>
+              </h3>
+              <ul class="list-disc pl-6">
+                <li>Federation of Obstetric and Gynaecological Societies of India</li>
+                <li>Indian Society of Assisted Reproduction</li>
+                <li>Indian Fertility Society</li>
+                <li>Endoscopy Society of India</li>
+              </ul>
+              <h3 class="font-medium text-lg mb-2 mt-6">
+                <span class="border-b-2 border-pink-600">Awards & Recognitions</span>
+              </h3>
+              <ul class="list-disc pl-6">
+                <li>Vishisht Sewa Medal for outstanding service</li>
+                <li>Supervisor for PhD in reproductive medicine</li>
+                <li>Examiner for Post Doctoral fellowship in Reproductive Medicine DNB India</li>
+                <li>Examiner for UPSC Board</li>
+                <li>Advisor to numerous ART programmes of Government Medical College & Private Institutes in India.</li>
+                <li>Reviewer for National & International Journals</li>
+                <li>Co-opted executive committee member of ISAR</li>
+                <li>Former Secretary General of Indian Fertility society</li>
+              </ul>
+
+              <h3 class="font-medium text-lg mb-2 mt-6">
+                <span class="border-b-2 border-pink-600">Address</span>
+              </h3>
+              <ul class="list-disc pl-6">
+                <li>Maa Fertility Clinic, C2/312</li>
+                <li>Janakpuri</li>
+                <li>New Delhi, Delhi</li>
+                <li>India</li>
+                <li>011-40079312</li>
+              </ul>
+
+              <h3 class="font-medium text-lg mb-2 mt-6">
+                <span class="border-b-2 border-pink-600">Dr. Brigadier R K Sharma's </span>Social Media Profile
+              </h3>
+
+            </div>
+          </div>
+          <!-- tab content 2 -->
+
+          <div x-show="openTab === 2" class="information grow flex flex-col h-full pt-8 px-5">
+            <div class="education">
+              <h3 class="font-medium text-lg mb-2">
+                <span class="border-b-2 border-pink-600">Education</span>
+              </h3>
+              <ul class="list-disc">
+                <li>MBBS, 1981, Armed Forces Medical College, Pune University</li>
+                <li>MD Obstetrics & Gynaecology, 1989, Armed Forces Medical College, Pune University</li>
+              </ul>
+              <h3 class="font-medium text-lg mb-2 mt-6">
+                <span class="border-b-2 border-pink-600">Trainings</span>
+              </h3>
+              <ul class="list-disc">
+                <li>IVF, 1995, Bombay Hospital</li>
+              </ul>
+            </div>
+          </div>
+          <!-- tab content 3 -->
+
+          <div x-show="openTab === 3" class="">
+
+          </div>
+          <!-- tab content 4 -->
+
+          <div x-show="openTab === 4" class="">
+
+          </div>
+        </div>
       </div>
     </div>
 
-    <script src="./index.js"></script>
-  </body>
+    <!-- Right Side Content -->
+    <div class="w-full md:w-[30%] border border-gray-400">
+      <h1 class="text-3xl text-center"></h1>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+
 </html>
