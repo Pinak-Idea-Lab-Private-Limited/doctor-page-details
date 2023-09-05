@@ -173,28 +173,44 @@
                 </p>
 
                 <div class="flex my-3 items-center doc1">
+                  <span class="number-rating mr-2">(100)</span>
                   <div class="rating">
                     <div class="stars"></div>
                   </div>
-                  <span class="number-rating ml-2">(100)</span>
-                  <i
-                    class="fa-rating-info"
-                    onclick="ratingModalToggle('show')"
-                  ></i>
+                  <span class="number-rating ml-2">(360 Reviews)</span>
+                  <i class="fa-rating-info" onclick="ratingModalToggle('show')"></i>
                 </div>
 
-                <div class="flex flex-col sm:flex-row w-full gap-5 mt-5">
-                  <button
-                    class="bg-blue-500 text-white px-5 py-2 rounded w-32 cursor-pointer"
-                  >
-                    Call Us
+                <div class="flex flex-col sm:flex-row  w-full">
+                  <div class=" flex flex-col w-full lg:w-1/2">
+
+                    <p class="info-texts fz-scale ">
+                      <i class="fa-experience"></i>28 Years Experience
+                    </p>
+                    <p class="info-texts fz-scale">
+                      <i class="fa-baby"></i>10000 IVF Cycles
+                    </p>
+                    <p class="info-texts fz-scale">
+                      <i class="fa-phone"></i>+91-9814325187
+                    </p>
+  
+                  </div>
+                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 my-3 px-2 rounded-lg xs:hidden">
+                    Call Now
                   </button>
-                  <button
-                    class="bg-blue-500 text-white px-5 rounded w-32 cursor-pointer"
-                  >
-                    Book Now
-                  </button>
+                  <div class=" mt-0 sm:flex flex-col w-full max-w-[250px] lg:w-1/2 hidden sm:visible">
+
+                    <p class="flex gap-6 items-center justify-between">
+                      <span class="info-texts fz-scale"><i class="fa-location"></i>Belagavi</span><span class="gap-1">
+                        <i class="fa-rupee"></i>
+                        1000</span>
+                    </p>
+  
+                    <p class="mt-2 info-texts fz-scale">First Consultancy Free</p>
+                  </div>
                 </div>
+
+                
               </div>
             </div>
           </div>
@@ -227,7 +243,7 @@
                   <div class="flex items-center justify-center gap-1 md:gap-4">
                     <i class="fa-graduation-cap"></i>
                     <span class="font-medium text-gray-900 uppercase">
-                      Education
+                      Education & Trainings
                     </span>
                   </div>
                 </button>
@@ -326,8 +342,22 @@
             </div>
             <!-- tab content 2 -->
 
-            <div x-show="openTab === 2">
-              education
+            <div x-show="openTab === 2" class="information grow flex flex-col h-full pt-8 px-5">
+              <div class="education">
+                <h3 class="font-medium text-lg mb-2">
+                  <span class="border-b-2 border-pink-600">Education</span>
+                </h3>
+                <ul class="list-disc">
+                  <li>MBBS,	1981, Armed Forces Medical College,	Pune University</li>
+                  <li>MD	Obstetrics & Gynaecology,	1989,	Armed Forces Medical College,	Pune University</li>
+                </ul>
+                <h3 class="font-medium text-lg mb-2 mt-6">
+                  <span class="border-b-2 border-pink-600">Trainings</span>
+                </h3>
+                <ul class="list-disc">
+                  <li>IVF,	1995,	Bombay Hospital</li>
+                </ul>
+              </div>
             </div>
             <!-- tab content 3 -->
 

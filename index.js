@@ -51,7 +51,7 @@ function getRatings() {
   for (let rating in ratings) {
     document.querySelector(
       `.${rating} .number-rating`
-    ).innerHTML = `(${ratings[rating]})`;
+    ).innerHTML = `${ratings[rating]}`;
     renderStarRating(ratings[rating], rating);
   }
 }
