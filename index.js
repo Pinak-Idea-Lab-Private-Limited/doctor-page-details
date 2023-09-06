@@ -71,20 +71,18 @@ aboutTabContentAll.forEach((each, index) => {
   }
 });
 
-const showAndHideModal = (state, index) => {
+const showAndHideModal = (state) => {
   let dcModal = document.querySelector("#dc-modal");
   let modalTitle = document.querySelector("#modalTitle");
   let modalContent = document.querySelector("#modalContent");
 
   if (state === "show") {
-    let rmBtn = document.querySelector("#aboutTab-rmBtn-" + index); //rmBtn: read more btn
-    let aboutDivContent = rmBtn.previousElementSibling;
-    let h3Content = aboutDivContent.previousElementSibling;
+    modalTitle.innerText = document.querySelector('#about-header').innerText
+
+    modalContent.innerHTML = document.querySelector('.about-content').innerHTML
 
     dcModal.classList.remove("hidden");
 
-    modalTitle.innerHTML = h3Content.innerHTML;
-    modalContent.innerHTML = aboutDivContent.innerHTML;
   } else {
     dcModal.classList.add("hidden");
   }
@@ -112,11 +110,3 @@ const ratingModalToggle = (state) => {
     rModal.classList.add("hidden");
   }
 };
-
-// read more
-const readMore = document.querySelector('#readbtn')
-const readText = document.querySelector('#more')
-readMore.addEventListener('click', () => {
-    readText.classList.toggle('hidden')
-    readMore.innerText === "Read More" ? readMore.innerText = "Read Less" : readMore.innerText = "Read More";
-})
