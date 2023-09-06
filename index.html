@@ -91,12 +91,10 @@
     <!-- Left Side Content -->
     <div class="w-full lg:w-[70%]">
       <!-- Doctor Card 1 -->
-      <div class="doc-card bg-white lg:rounded-lg mb-8 p-5 relative" x-data="{
-        openTab:1,
-      }">
+      <div class="doc-card bg-white lg:rounded-lg mb-8 p-5 relative" >
         <div class="absolute w-10 h-5 right-5 top-2 flex gap-2 items-start justify-center">
-          <i class="fa-share-nodes bg-teal-200 rounded-full p-2 cursor-pointer z-10"></i>
-          <i class="fa-bookmark bg-teal-200 rounded-full p-2 cursor-pointer z-10"></i>
+          <i class="fa-share-nodes  rounded-full p-2 cursor-pointer z-10"></i>
+          <i class="fa-bookmark  rounded-full p-2 cursor-pointer z-10"></i>
         </div>
         <div class="xs:flex gap-0 xs:gap-4 lg:gap-7 mb-5">
           <div class="img grow-0 gap-3 w-full xs:w-[35%] sm:w-1/4">
@@ -158,66 +156,13 @@
           </div>
         </div>
 
-        <!-- tab buttons -->
-        <nav aria-label="Tabs">
-          <ul class="flex border-b border-gray-100 text-xs">
-            <li class="flex-1" @click="openTab = 1">
-              <button class="relative block p-2 md:p-4 w-full" href="#">
-                <span x-show="openTab === 1" class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"></span>
-
-                <div class="flex items-center justify-center gap-1 md:gap-4">
-                  <i class="fa-about"></i>
-                  <span class="font-medium text-gray-900 uppercase">
-                    About
-                  </span>
-                </div>
-              </button>
-            </li>
-
-            <li class="flex-1" @click="openTab = 2">
-              <button class="relative block p-2 md:p-4 w-full">
-                <span x-show="openTab === 2" class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"></span>
-                <div class="flex items-center justify-center gap-1 md:gap-4">
-                  <i class="fa-graduation-cap"></i>
-                  <span class="font-medium text-gray-900 uppercase">
-                    Education & Trainings
-                  </span>
-                </div>
-              </button>
-            </li>
-
-            <li class="flex-1" @click="openTab = 3">
-              <button class="relative block p-2 md:p-4 w-full" href="#">
-                <span x-show="openTab === 3" class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"></span>
-                <div class="flex items-center justify-center gap-1 md:gap-4">
-                  <i class="fa-highlights"></i>
-                  <span class="font-medium text-gray-900 uppercase">
-                    Highlights
-                  </span>
-                </div>
-              </button>
-            </li>
-
-            <li class="flex-1" @click="openTab = 4">
-              <button class="relative block p-2 md:p-4 w-full" href="#">
-                <span x-show="openTab === 4" class="absolute inset-x-0 -bottom-px h-px w-full bg-pink-600"></span>
-                <div class="flex items-center justify-center gap-1 md:gap-4">
-                  <i class="fa-consult"></i>
-                  <span class="font-medium text-gray-900 uppercase">
-                    Consult
-                  </span>
-                </div>
-              </button>
-            </li>
-          </ul>
-        </nav>
+        
         <div>
-          <!-- tab content 1 -->
-          <div class="information grow flex flex-col h-full pt-8" x-show="openTab === 1">
+          <div class="information grow flex flex-col h-full">
             <div class="about">
               <div class="about-sec">
                 <h3 class="font-medium text-lg mb-2">
-                  <span class="border-b-2 border-pink-600">About</span> Dr.
+                  About Dr.
                   Brigadier R K Sharma
                 </h3>
                 <p class="text-justify mb-1">
@@ -273,7 +218,7 @@
                 <button id="readbtn" class="bg-gray-400 p-1">Read More</button>
               </div>
               <h3 class="font-medium text-lg mb-2 mt-6">
-                <span class="border-b-2 border-pink-600">Treatments</span> Offered by Dr. Brigadier R K Sharma
+                Treatments Offered by Dr. Brigadier R K Sharma
               </h3>
               <ul class="list-disc pl-6">
                 <li>IVF</li>
@@ -287,26 +232,26 @@
                 <li>Endoscopy</li>
               </ul>
               <h3 class="font-medium text-lg mb-2 mt-6">
-                <span class="border-b-2 border-pink-600">Medical</span> Registrations
+                Medical Registrations
               </h3>
               <ul class="list-disc pl-6">
                 <li>39678, Delhi Medical Council, 2008</li>
               </ul>
               <h3 class="font-medium text-lg mb-2 mt-6">
-                <span class="border-b-2 border-pink-600">Education</span>
+                Education
               </h3>
               <ul class="list-disc pl-6">
                 <li>MBBS, 1981, Armed Forces Medical College, Pune University</li>
                 <li>MD Obstetrics & Gynaecology, 1989, Armed Forces Medical College, Pune University</li>
               </ul>
               <h3 class="font-medium text-lg mb-2 mt-6">
-                <span class="border-b-2 border-pink-600">Trainings</span>
+                Trainings
               </h3>
               <ul class="list-disc pl-6">
                 <li>IVF, 1995, Bombay Hospital</li>
               </ul>
               <h3 class="font-medium text-lg mb-2 mt-6">
-                <span class="border-b-2 border-pink-600">Memberships</span>
+                Memberships
               </h3>
               <ul class="list-disc pl-6">
                 <li>Federation of Obstetric and Gynaecological Societies of India</li>
@@ -315,7 +260,7 @@
                 <li>Endoscopy Society of India</li>
               </ul>
               <h3 class="font-medium text-lg mb-2 mt-6">
-                <span class="border-b-2 border-pink-600">Awards & Recognitions</span>
+                Awards & Recognitions
               </h3>
               <ul class="list-disc pl-6">
                 <li>Vishisht Sewa Medal for outstanding service</li>
@@ -329,7 +274,7 @@
               </ul>
 
               <h3 class="font-medium text-lg mb-2 mt-6">
-                <span class="border-b-2 border-pink-600">Address</span>
+                Address
               </h3>
               <ul class="list-disc pl-6">
                 <li>Maa Fertility Clinic, C2/312</li>
@@ -340,40 +285,13 @@
               </ul>
 
               <h3 class="font-medium text-lg mb-2 mt-6">
-                <span class="border-b-2 border-pink-600">Dr. Brigadier R K Sharma's </span>Social Media Profile
+                Dr. Brigadier R K Sharma's </span>Social Media Profile
               </h3>
 
             </div>
           </div>
-          <!-- tab content 2 -->
 
-          <div x-show="openTab === 2" class="information grow flex flex-col h-full pt-8 px-5">
-            <div class="education">
-              <h3 class="font-medium text-lg mb-2">
-                <span class="border-b-2 border-pink-600">Education</span>
-              </h3>
-              <ul class="list-disc">
-                <li>MBBS, 1981, Armed Forces Medical College, Pune University</li>
-                <li>MD Obstetrics & Gynaecology, 1989, Armed Forces Medical College, Pune University</li>
-              </ul>
-              <h3 class="font-medium text-lg mb-2 mt-6">
-                <span class="border-b-2 border-pink-600">Trainings</span>
-              </h3>
-              <ul class="list-disc">
-                <li>IVF, 1995, Bombay Hospital</li>
-              </ul>
-            </div>
-          </div>
-          <!-- tab content 3 -->
-
-          <div x-show="openTab === 3" class="">
-
-          </div>
-          <!-- tab content 4 -->
-
-          <div x-show="openTab === 4" class="">
-
-          </div>
+         
         </div>
       </div>
     </div>
