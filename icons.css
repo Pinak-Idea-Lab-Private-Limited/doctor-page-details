@@ -20,6 +20,11 @@
     src: url(./webfonts/fa-solid-900.woff2) format("woff2");
 }
 
+@font-face {
+    font-family: "brands";
+    src: url(./webfonts/fa-brands-400.woff2) format("woff2");
+}
+
 /* rupee icons */
 .fa-rupee {
     font-family: "regular";
@@ -331,4 +336,94 @@
 }
  .fa-rating-info:hover::before,.fa-rating-info:hover::after{
     color: #fff;
+}
+
+/* facebook icon */
+.fa-square-facebook {
+    position: relative;
+    font-family: "Font Awesome 6 Brands";
+    font-style: normal;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fa-square-facebook::before {
+    position: absolute;
+    top: 0;
+    content: "\f082"
+}
+
+/* twitter icon */
+.fa-square-x-twitter {
+    position: relative;
+    font-family: "brands";
+    font-style: normal;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fa-square-x-twitter::before {
+    position: absolute;
+    top: 0;
+    content: "\e61a"
+}
+
+/* instagram icon */
+.fa-square-instagram {
+    position: relative;
+    font-family: "brands";
+    font-style: normal;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fa-square-instagram::before {
+    position: absolute;
+    top: 0;
+    content: "\e055"
+}
+
+/* globe icon */
+.fa-globe {
+    position: relative;
+    font-family: "solid";
+    font-style: normal;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fa-globe::before {
+    position: absolute;
+    top: 0;
+    content: "\f0ac"
+}
+
+/* youtube icon */
+.fa-youtube {
+    position: relative;
+    font-family: "brands";
+    font-style: normal;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fa-youtube::before {
+    position: absolute;
+    top: 0;
+    content: "\f167"
+}
+
+/* whats app icon */
+.fa-square-whatsapp {
+    position: relative;
+    font-family: "brands";
+    font-style: normal;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fa-square-whatsapp::before {
+    position: absolute;
+    top: 0;
+    content: "\f40c"
 }
