@@ -56,20 +56,40 @@ function getRatings() {
   }
 }
 
-// ABOUT content - add three dots when overflowing
-const aboutTabContentAll = document.querySelectorAll(".aboutTab-content");
-aboutTabContentAll.forEach((each, index) => {
-  let rmBtn = document.querySelector("#aboutTab-rmBtn-" + index); //rmBtn: read more btn
+// // ABOUT content - add three dots when overflowing
+// const aboutTabContentAll = document.querySelectorAll(".aboutTab-content");
+// aboutTabContentAll.forEach((each, index) => {
+//   let rmBtn = document.querySelector("#aboutTab-rmBtn-" + index); //rmBtn: read more btn
 
-  if (each.scrollHeight > each.clientHeight) {
-    let computedStyle = window.getComputedStyle(each);
-    let lineHeight = computedStyle.lineHeight.replace("px", "");
-    let lines = Math.floor(each.clientHeight / lineHeight);
+//   if (each.scrollHeight > each.clientHeight) {
+//     let computedStyle = window.getComputedStyle(each);
+//     let lineHeight = computedStyle.lineHeight.replace("px", "");
+//     let lines = Math.floor(each.clientHeight / lineHeight);
 
-    each.style.cssText = `display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: ${lines};`;
-    rmBtn.classList.remove("hidden");
-  }
-});
+//     each.style.cssText = `display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: ${lines};`;
+//     rmBtn.classList.remove("hidden");
+//   }
+// });
+
+  let readMoreBtn = document.querySelector('#aboutTab-rmBtn-0')
+  let content = document.querySelector('.content')
+  let readMoreParent = document.querySelector('#readMore-parent')
+
+  readMoreBtn.addEventListener('click', () => {
+    if(readMoreBtn.innerText === 'Read More') {
+      content.classList.remove('h-[120px]')
+      content.style.paddingBottom = "40px";
+      readMoreBtn.innerText = 'Read Less'
+      readMoreParent.classList.remove('right-0', 'w-[100%]', 'sm:w-[55%]')
+      readMoreParent.classList.add('left-0')
+    } else {
+      content.classList.add('h-[120px]')
+      content.style.paddingBottom = "0px";
+      readMoreBtn.innerText = 'Read More'
+      readMoreParent.classList.add('right-0', 'w-[100%]', 'sm:w-[55%]')
+      readMoreParent.classList.remove('left-0')
+    }
+  })
 
 const showAndHideModal = (state) => {
   let dcModal = document.querySelector("#dc-modal");
