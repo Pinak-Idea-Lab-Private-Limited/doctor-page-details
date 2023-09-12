@@ -433,6 +433,21 @@
     content: "\f232"
 }
 
+/* telegram icon */
+.fa-telegram {
+    position: relative;
+    font-family: "brands";
+    font-style: normal;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fa-telegram::before {
+    position: absolute;
+    top: 0;
+    content: "\f2c6"
+}
+
 /* footer icons */
 
 
