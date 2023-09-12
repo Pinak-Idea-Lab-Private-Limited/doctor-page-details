@@ -29,15 +29,15 @@ function renderStarRating(rating, ratingCard) {
 
     if (rating >= i) {
       // star with fill color
-      star.classList.add("fa-star", "star-box");
+      star.classList.add("fa-star", "star-box", "w-6", "h-6", "flex", "items-center", "content-center");
       star.style.background = `${color}`;
     } else if (i === Math.ceil(rating)) {
       // half fill color star
-      star.classList.add("fa-star", "star-box");
+      star.classList.add("fa-star", "star-box", "w-6", "h-6", "flex", "items-center", "content-center");
       star.style.backgroundImage = `linear-gradient(to right, ${color} 0% ${colorPercentage}%, #78716C ${grayPercentage}% 100%)`;
     } else {
       // star without fill color
-      star.classList.add("fa-star", "star-box");
+      star.classList.add("fa-star", "star-box", "w-6", "h-6", "flex", "items-center", "content-center");
       star.style.background = `#78716C`;
     }
 
@@ -78,16 +78,29 @@ function getRatings() {
   readMoreBtn.addEventListener('click', () => {
     if(readMoreBtn.innerText === 'Read More') {
       content.classList.remove('h-[120px]')
+      content.style.height = 'min-content'
       content.style.paddingBottom = "40px";
       readMoreBtn.innerText = 'Read Less'
       readMoreParent.classList.remove('right-0', 'w-[100%]', 'sm:w-[55%]')
       readMoreParent.classList.add('left-0')
     } else {
+      content.style.height = '120px'
       content.classList.add('h-[120px]')
       content.style.paddingBottom = "0px";
       readMoreBtn.innerText = 'Read More'
       readMoreParent.classList.add('right-0', 'w-[100%]', 'sm:w-[55%]')
       readMoreParent.classList.remove('left-0')
+    }
+  })
+
+  const readbtn = document.querySelector('#readbtn')
+  readbtn.addEventListener('click', () => {
+    if(readbtn.innerText === 'Read More') {
+      readbtn.innerText = 'Read Less'
+      content.style.height = '900px'
+    } else {
+      readbtn.innerText = 'Read More'
+      readbtn.style.height = '200px'
     }
   })
 
