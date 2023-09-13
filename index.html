@@ -49,8 +49,9 @@
     </div>
   </div>
 
+  
   <!-- ratings icon modal -->
-  <div id="ratingInfo-modal" class="relative z-10 hidden " aria-labelledby="modal-title" role="dialog"
+  <div id="ratingInfo-modal" class="relative z-40 hidden " aria-labelledby="modal-title" role="dialog"
     aria-modal="true">
 
     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
@@ -173,67 +174,8 @@
                   About Dr.
                   Brigadier R K Sharma
                 </h2>
-                <!-- alpine js read more -->
-                <div class="transition-all duration-1000 ease-in-out" x-data="{ isCollapsed: false, maxLength: 430, originalContent: '', content: '' }"
-                x-init="originalContent = $el.firstElementChild.textContent.trim(); content = originalContent.slice(0, maxLength)"
-                >
-                  <span class="about-content transition-all duration-1000 ease-in-out" x-text="isCollapsed ? originalContent : content">
-                      Brigadier Dr. R K Sharma (VSM) is a Delhi-based IVF
-                      specialist, gynecologist, and obstetrician. He has been
-                      working since 1981. He is a reputed IVF specialist with more
-                      than 15,000 IVF cycles under his belt. Dr. RK Sharma is among 
-                      the best IVF specialists in Delhi. His areas of specialization
-                      are infertility, endoscopy, obstetrics, and gynecology.
-                      Brigadier Dr. R K Sharma completed his MBBS from Pune
-                      University in 1981. He did his MD in Obstetrics & Gynecology
-                      from Pune University passing out in 1989. He trained in IVF at
-                      Bombay Hospital in 1995. Brigadier Dr. R K Sharma is presently
-                      working at Maa Fertility Clinic, Janakpuri Delhi. The cost of
-                      IVF by Dr. R K Sharma at Maa Fertility Centre Janakpuri is Rs
-                      1,25,000 including the cost of medicines. 
-                    <br/>He is a member of
-                        ISAR, IFS, and ESI. Dr. R K Sharma was instrumental in setting
-                        up Assisted Reproduction Technology Centre at Command
-                        Hospital, AFMC Pune. He also help set up ART Centre at Army
-                        Hospital, Delhi. He is an examiner for various examinations
-                        like the UPSC board, post-doctoral fellowship in Reproductive
-                        Medicine, etc. The doctor shows empathy towards his patients.
-                        He gives personal attention to his patients and spends time to
-                        understand their case history. Dr. Sharma currently consults
-                        at Maa Fertility Clinic, Janakpuri. He is available for
-                        consultation between 11:00 AM to 4:00 PM Monday to Friday. 
-                      <br/>Dr.
-                        R K Sharma has thirty nine years experience in the field of
-                        medicine. He has been working as a specialist for the last
-                        thirty one years. He is also the professor of Obstetrics &
-                        Gynecology at AFMC, Pune. He performed his first IVF procedure
-                        in 1994. The field of IVF was new and present-day
-                        technological advancement was not available. The patients were
-                        a couple suffering from infertility for ten years. His very
-                        first procedure was successful and the couple was blessed with
-                        a child. The gratitude of the patients prompted him pursue the
-                        path of ART. The Brigadier served in the Indian Armed Forces
-                        for thirty years. He was awarded the prestigious Visisth Seva
-                        Medal (VSM). He set up IVF clinics at Army Hospitals including
-                        the prestigious Army Hospital (Research & Referral). Dr.
-                        (Brig) R K Sharma (VSM) is also an examiner for Post Doctoral
-                        Fellowship in Reproductive Medicine. The doctor has also
-                        worked at Primus Hospital, Chanakyapuri New Delhi. He has
-                        delivered lectures & presentations on various fields of IVF &
-                        ART.
-                      <br/>He has also been instrumental in designing protocols in
-                        the field of IVF, which are acknowledged and used by doctors
-                        across the country.
-                    </span>
-                    
-                    <button id="aboutTab-rmBtn-0" 
-        @click="isCollapsed = !isCollapsed"
-        x-show="originalContent.length > maxLength"
-        x-text="isCollapsed ? 'Read Less' : 'Read More'"
-      ></button>
-                  
-                </div>
-                <!-- <div class="content relative overflow-hidden transition-all duration-1000 ease">
+                
+                <div class="content relative overflow-hidden transition-all duration-1000 ease h-[120px]">
                   <div class="about-content">
                     <p class="text-justify mb-1">
                       Brigadier Dr. R K Sharma (VSM) is a Delhi-based IVF
@@ -289,8 +231,8 @@
   
                     <span id="aboutTab-rmBtn-0" class="w-24 text-center" >Read More</span>
                   </div>
-                </div> -->
-                <!-- <button id="readbtn" class="bg-gray-400 p-1">Read More</button> -->
+                </div> 
+                
               </div>
               <h3 class="font-medium text-lg mb-2 mt-6">
                 Treatments Offered by Dr. Brigadier R K Sharma
