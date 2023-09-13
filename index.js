@@ -79,7 +79,7 @@ let readMoreParent = document.querySelector("#readMore-parent");
 readMoreBtn.addEventListener("click", () => {
   if (readMoreBtn.innerText === "Read More") {
     content.classList.remove("h-[120px]");
-    content.style.height = "min-content";
+    content.style.height = "650px";
     content.style.paddingBottom = "40px";
     readMoreBtn.innerText = "Read Less";
     readMoreParent.classList.remove("right-0", "w-[100%]", "sm:w-[55%]");
