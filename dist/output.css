@@ -2773,6 +2773,10 @@ input:checked + .toggle-bg {
     width: 650px;
   }
 
+  .lg\:w-\[30\%\] {
+    width: 30%;
+  }
+
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
