@@ -1205,6 +1205,18 @@ input:checked + .toggle-bg {
   top: 64px;
 }
 
+.-left-9 {
+  left: -2.25rem;
+}
+
+.-left-7 {
+  left: -1.75rem;
+}
+
+.-right-7 {
+  right: -1.75rem;
+}
+
 .isolate {
   isolation: isolate;
 }
