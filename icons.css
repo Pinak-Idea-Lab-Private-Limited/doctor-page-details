@@ -467,3 +467,38 @@
   .fa-s-envelope::before{
     content: "\f0e0";
   }
+
+  /* carousel left and right button */
+  .fa-car-right {
+    font-family: "solid";
+    font-style: normal;
+    font-size: 14px;
+    background-color: #999;
+    padding: 2px 8px;
+    border-radius: 25px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .fa-car-right::before {
+    content: "\f0da";
+    color: #fff;
+  }
+
+  .fa-car-left{
+
+    font-family: "solid";
+    font-style: normal;
+    font-size: 14px;
+    background-color: #999;
+    padding: 2px 8px ;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+.fa-car-left::before {
+    content: "\f0d9";
+    color: #fff;
+
+}
