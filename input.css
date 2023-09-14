@@ -39,5 +39,15 @@
     .rm-shadow{
         background-image:  linear-gradient(90deg,rgba(255, 255, 255, 0),#fff 78%);
     }
+
+    .cities-shadow{
+        background-image:  linear-gradient(180deg,rgba(255, 255, 255, 0),#f2f2f2 125%);
+
+    }
+
+    .bg-color{
+        /* @apply bg-slate-300; */
+         background-image: linear-gradient(to right,  #fae862, #f9a68f );;
+    }
     
 }
