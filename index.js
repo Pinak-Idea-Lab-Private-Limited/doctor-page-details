@@ -1,17 +1,7 @@
 // rating functionality
-
-const ratings = {
-  doc1: 3.1,
-  doc2: 4.7,
-  doc3: 2.5,
-  doc4: 1.9,
-  doc5: 4.2,
-  doc6: 0.6,
-};
-
 // generate stars according to the rating
 function renderStarRating(rating, ratingCard) {
-  const starContainer = document.querySelector(`.${ratingCard} .rating .stars`);
+  const starContainer = ratingCard.querySelector('.rating .stars');
   starContainer.innerHTML = "";
 
   const colorPercentage = Math.round((rating % 1) * 100).toString();
@@ -22,6 +12,7 @@ function renderStarRating(rating, ratingCard) {
   else if (rating >= 3) color = "#166534";
   else if (rating >= 2) color = "#15803D";
   else if (rating >= 1) color = "#16A34A";
+  else if (rating >= 0) color = "#22C55E";
   else color = "#78716C";
 
   for (let i = 1; i <= 5; i++) {
@@ -48,52 +39,23 @@ function renderStarRating(rating, ratingCard) {
   }
 }
 
-const starsTotal = 5;
+const ratingCards = document.querySelectorAll('[data-star-rating]');
 document.addEventListener("DOMContentLoaded", getRatings);
 function getRatings() {
-  document.querySelector(
-    `.doc1 .number-rating`
-  ).innerHTML = `3.1`;
-  renderStarRating(3.1, 'doc1');
+  ratingCards.forEach(card => {
+    // Access the card or modify its properties
+    const numberRating = Number(card.getAttribute('data-star-rating'));
+    // Call the star creating function
+    renderStarRating(numberRating, card);
+  });
 }
-
-// // ABOUT content - add three dots when overflowing
-// const aboutTabContentAll = document.querySelectorAll(".aboutTab-content");
-// aboutTabContentAll.forEach((each, index) => {
-//   let rmBtn = document.querySelector("#aboutTab-rmBtn-" + index); //rmBtn: read more btn
-
-//   if (each.scrollHeight > each.clientHeight) {
-//     let computedStyle = window.getComputedStyle(each);
-//     let lineHeight = computedStyle.lineHeight.replace("px", "");
-//     let lines = Math.floor(each.clientHeight / lineHeight);
-
-//     each.style.cssText = `display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: ${lines};`;
-//     rmBtn.classList.remove("hidden");
-//   }
-// });
 
 let readMoreBtn = document.querySelector("#aboutTab-rmBtn-0");
 let content = document.querySelector(".content");
 let aboutContent = document.querySelector(".about-content");
 let readMoreParent = document.querySelector("#readMore-parent");
 
-// readMoreBtn.addEventListener("click", () => {
-//   if (readMoreBtn.innerText === "Read More") {
-//     content.classList.remove("max-h-[120px]");
-//     content.style.maxHeight = "500px";
-//     content.style.paddingBottom = "40px";
-    // readMoreBtn.innerText = "Read Less";
-    // readMoreParent.classList.remove("right-0", "w-[100%]", "sm:w-[55%]");
-    // readMoreParent.classList.add("left-0");
-//   } else {
-//     content.style.maxHeight = "120px";
-//     content.classList.add("max-h-[120px]");
-//     content.style.paddingBottom = "0px";
-    // readMoreBtn.innerText = "Read More";
-    // readMoreParent.classList.add("right-0", "w-[100%]", "sm:w-[55%]");
-    // readMoreParent.classList.remove("left-0");
-//   }
-// });
+
 
 readMoreBtn.addEventListener("click", () => {
   if (content.clientHeight > 120) {

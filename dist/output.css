@@ -1205,10 +1205,6 @@ input:checked + .toggle-bg {
   top: 64px;
 }
 
-.right-4 {
-  right: 1rem;
-}
-
 .isolate {
   isolation: isolate;
 }
@@ -1908,11 +1904,6 @@ input:checked + .toggle-bg {
 
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
-}
-
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(240 82 82 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {
